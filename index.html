@@ -1,60 +1,110 @@
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Luiz H Bandeira</title>
-	<link rel="stylesheet" href="css/estilos.css"> 
-</head>
-<body> 
-	<header class="header">
-		<nav class="menu">
-			<ul>
-				<li><a href="sobre.html">Sobre</a></li>
-				<li><a href="#">Portfólio</a></li>
-				<li><a href="#">Contato</a></li>
-			</ul>
-		</nav>
-		<div>
-			<br/>
-			<img class="perfil" src="img/perfil.jpg" alt="Luiz Bandeira - foto de perfil">
-			<h1 class="site-title">Luiz Henrique Bandeira</h1>
-			<h2 class="site-subtitle">Jr. Developer</h2>
-			<h2 class="site-subtitle">Curitiba, Paraná - PR | (41) 99641-7957 | 
-				<a href="mailto:luiz.xaxim.95@gmail.com">luiz.xaxim.95@gmail.com</a>
-			</h2>
-		</div>		
-	</header>
 
-	<div class="background">
-		<section class="portfolio">
-			  <h2>Projetos<hr/></h2>
-			  <div class="grid">
-				<figure>
-					<a class="fig-sub-title"href="#">
-						<figcaption>Projeto 1</figcaption>		
-						<img class="img-portfolio" src="" alt="Mobile">	
-					</a>					
-				</figure>
-				<figure>
-					<a class="fig-sub-title" href="#">
-						<figcaption>Projeto 2</figcaption>		
-						<img class="img-portfolio" src="" alt="Mobile">	
-					</a>				
-				</figure>
-				<figure>
-					<a class="fig-sub-title"href="#">
-						<figcaption>Projeto 3</figcaption>		
-						<img class="img-portfolio" src="" alt="Mobile">	
-					</a>				
-				</figure>
-				<figure>
-					<a class="fig-sub-title"href="#">
-						<figcaption>Projeto 4</figcaption>		
-						<img class="img-portfolio" src="" alt="Mobile">	
-					</a>					
-				</figure>
-			  </div>
-		</section>
-	  </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luiz H Bandeira</title>
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/1eb3e3e9db.js" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <header class="header" id="menuTopo">
+        <nav class="menu" id="myLinks">
+            <a href="#" class="active home"><i class="fa fa-fw fa-home"></i></a>
+            <a href="sobre.html">Sobre</a>
+            <a href="#">Portfólio</a>
+            <a href="contato.html"><i class="fa fa-fw fa-envelope"></i>Contato</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+
+        </nav>
+        <div class="perfil">
+            <br />
+            <img src="img/perfil.jpg" alt="Luiz Bandeira - foto de perfil">
+            <h1 class="titulo site-title">Luiz Henrique Bandeira</h1>
+            <h2 class="titulo site-subtitle">Jr. Developer</h2>
+            <h2 class="titulo site-subtitle">Curitiba, Paraná - PR | (41) 99641-7957
+                <a href="mailto:luiz.xaxim.95@gmail.com">luiz.xaxim.95@gmail.com</a>
+            </h2>
+
+        </div>
+    </header>
+
+    <a href="#menuTopo" id="subirTopo" title="Subir para o topo" alt="Subir para o topo" role="link"></a>
+
+    <section class="portfolio" id="portfolio">
+        <h2>Projetos
+            <hr />
+        </h2>
+        <div class="grid">
+            <figure>
+                <a href="https://github.com/luizbandeira59/AspNetMvc-Vendas">
+                    <figcaption>ASP MVC COM EF! PROJETO DE VENDAS</figcaption>
+                    <img class="portfolio-img" src="./img/dot-net-core.png" alt="ASP.NET MVC">
+                </a>
+            </figure>
+            <figure>
+                <a href="#">
+                    <figcaption>Projeto 2</figcaption>
+                    <img class="portfolio-img" src="./img/imagem2.png" alt="Projeto2">
+                </a>
+            </figure>
+            <figure>
+                <a href="#">
+                    <figcaption>Projeto 3</figcaption>
+                    <img class="portfolio-img" src="./img/imagem3.png" alt="Projeto3">
+                </a>
+            </figure>
+            <figure>
+                <a href="#">
+                    <figcaption>Projeto 4</figcaption>
+                    <img class="portfolio-img" src="./img/imagem4.png" alt="Projeto4">
+                </a>
+            </figure>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="js/pace.min.js"></script>
+
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myLinks")
+            if (x.className === "menu") {
+                x.className += " responsive"
+            } else {
+                x.className = "menu"
+            }
+        }
+    </script>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+
+            jQuery("#subirTopo").hide();
+
+            jQuery('a#subirTopo').click(function() {
+                jQuery('body,html').animate({
+                    scrollTop: 0
+                }, 800);
+                return false;
+            });
+
+            jQuery(window).scroll(function() {
+                if (jQuery(this).scrollTop() > 500) {
+                    jQuery('#subirTopo').fadeIn()
+                } else {
+                    jQuery('#subirTopo').fadeOut()
+                }
+            });
+        });
+    </script>
+
 </body>
+
 </html>
